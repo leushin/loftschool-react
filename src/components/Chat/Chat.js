@@ -14,7 +14,7 @@ class Chat extends React.Component {
     }
 
     sendMessageOnEnter = event => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && event.target.value !== '') {
             this.setState(oldState => ({
                 messages: [...oldState.messages, { text: oldState.messageInput }],
                 messageInput: ''
@@ -25,9 +25,19 @@ class Chat extends React.Component {
     render () {
         return (
             <div className="chat">
-                {
-                    this.state.messages.map((message, ndx) => <Message key={message.text + ndx} text={message.text}/>)
-                }
+                <div class="message-list">
+                    <div class="messages">
+                    {
+                        this.state.messages.map((message, ndx) => {
+                            return (
+                                <span key={message.text + ndx} class="message">
+                                    <Message text={message.text}/>
+                                </span>
+                            );
+                        })
+                    }
+                    </div>
+                </div>
                 <input value={this.state.messageInput} onChange={this.changeInputMessage} onKeyPress={this.sendMessageOnEnter} className="input-message"/>
             </div>
         );

@@ -19,3 +19,5 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+.message{margin:5px 0;-ms-flex-item-align:left;align-self:left;background-color:#5b5bff;border-radius:16px;color:#fff;font-family:Arial,Helvetica,sans-serif;padding:5px 15px;-ms-flex-item-align:baseline;align-self:baseline}.message__like{width:auto;height:16px;padding-left:10px;cursor:pointer}.chat{width:250px;height:450px;border:1px solid #d8d8fd;border-radius:4px;-webkit-box-shadow:0 0 9px 1px rgba(0,0,0,.1);box-shadow:0 0 9px 1px rgba(0,0,0,.1);display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.message-list{-ms-flex:10 1;flex:10 1;overflow-y:scroll}.messages{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-height:100%;padding:10px 10px 0}.input-message{margin:5px;border-radius:20px;border:1px solid #eee;font-size:16px;outline:none;padding:4px 10px}#root,body,html{height:100%}html{-webkit-box-sizing:border-box;box-sizing:border-box}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}#root{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}
