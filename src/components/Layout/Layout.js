@@ -5,10 +5,12 @@ import './Layout.css';
 class Layout extends PureComponent {
   render() {
     const { children, header, footer } = this.props;
+    const mainClass = 'main' + (header ? ' main--with-header' : '') + (footer ? ' main--with-footer' : '');
+
     return (
         <Fragment>
             {this.renderHeader(header)}
-            <main className="main main--with-header main--with-footer">
+            <main className={mainClass}>
                 <SectionTitle className="main__title">Main</SectionTitle>
                 {children}
             </main>
@@ -18,11 +20,11 @@ class Layout extends PureComponent {
   }
 
   renderHeader(HeaderChild) {
-    return <HeaderChild/>;
+    return HeaderChild ? <HeaderChild/> : null;
   }
 
   renderFooter(FooterChild) {
-    return <FooterChild/>;
+    return FooterChild ? <FooterChild/> : null;
   }
 }
 

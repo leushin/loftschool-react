@@ -11,15 +11,15 @@ class Header extends PureComponent {
                 <div className="header__content">
                     <AuthConsumer>
                     {
-                        ({ isAuthorized, logOut, email }) => (
+                        ({ isAuthorized, logout, email }) => (
                             isAuthorized && (
-                                <div class="header-menu">
-                                    <p class="header-menu__email header-email t-header-email">
+                                <div className="header-menu">
+                                    <p className="header-menu__email header-email t-header-email">
                                         {email}
                                     </p>
                                 <Button
-                                class="header-menu__button t-logout"
-                                onClick={logOut}
+                                className="header-menu__button t-logout"
+                                onClick={logout}
                                 >
                                 Выйти
                                 </Button>

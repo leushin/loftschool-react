@@ -8,15 +8,16 @@ const access = {
 
 class AuthProvider extends PureComponent {
     state = {
+        email: 'stu@dent.com',
         isAuthorized: false,
-        authorizeError: null
+        authorizeError: ''
     }
 
     authorize = (login, pass) => {
         if (login === access.login && pass === access.pass) {
             this.setState({
                 isAuthorized: true,
-                authorizeError: null
+                authorizeError: ''
             });
         } else {
             this.setState({
@@ -26,25 +27,30 @@ class AuthProvider extends PureComponent {
         }
     }
 
-    logOut = () => {
+    logout = () => {
         this.setState({
             isAuthorized: false,
-            authorizeError: null
+            authorizeError: ''
         });
     }
 
-    render() {
-        const { children } = this.props;
-        const data = {
-            email: access.login,
+    getProviderValue = () => {
+        return {
+            email: this.state.email,
             isAuthorized: this.state.isAuthorized,
             authorizeError: this.state.authorizeError,
             authorize: this.authorize,
-            logOut: this.logOut
+            logout: this.logout
         }
+    }
 
-        return <Provider value={data}>{children}</Provider>;
+    render () {
+        const { children } = this.props;
+
+        return <Provider value={this.getProviderValue()}>{children}</Provider>;
     }
 }
 
-export { AuthProvider, AuthConsumer };
+const TestProvider = Provider;
+
+export { AuthProvider, AuthConsumer, TestProvider };
