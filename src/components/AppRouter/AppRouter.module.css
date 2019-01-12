@@ -35,14 +35,3 @@
   user-select: none;
   pointer-events: none;
 }
-
-.content {
-  width: 100%;
-}
-
-.title {
-  margin: 0;
-  text-align: center;
-  border-bottom: 1px solid;
-  padding: 4px 0;
-}
